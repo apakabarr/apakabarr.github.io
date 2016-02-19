@@ -1,0 +1,286 @@
+﻿@charset "UTF-8";
+
+/* ↓ブラウザの既定のスタイルの初期化 ここから↓ */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-size: 87.5%;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color:#cc6699;
+}
+
+a img{
+  border:0px;
+}
+
+img {
+  vertical-align: bottom;
+}
+/* ↑ブラウザの既定のスタイルを初期化 ここまで↑ */
+
+/* コンテナ(包括)ブロック */
+
+#container{
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+/* ヘッダー領域 ここから */
+
+#header{
+	background: url(../images/headerbg.png) no-repeat center bottom;
+	background-size: contain;
+	width: 100%;
+	height: 240px;
+	margin-bottom: 8px;
+	position: relative;
+}
+
+#header #topcopy{
+	color:#fff;
+	font-size: 0.625em;
+	line-height: 2em;
+	background: rgba(0,0,0,0.35);
+	padding-left: 1em;
+}
+
+#header h1{
+	position: absolute;
+	top: 28px;
+	left: 16px;
+}
+
+#header h1 a{
+	background: url(../images/logo.png) no-repeat left top;
+	display: block;
+	width: 280px;
+	height: 0;
+	padding: 89px 0 0 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+/* ヘッダー領域　ここまで */
+
+
+/* ナビ領域(グローバルナビゲーション) ここから */
+
+#nav{
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+#nav ul{
+	padding: 0;
+	margin: 0;
+	border-radius: 6px;
+	overflow: hidden;/*clearfix=フロートの解除+高さの復元*/
+}
+
+
+#nav li{
+	background: #369;
+	float: left;
+	width: 158px;/*ボタンの数(6)で割った数字+ボーダーの幅(2*6)*/
+	height: 48px;
+	border: solid 1px #ffd6f3;
+	 /* ボックスモデルを変更すると
+	width: 160px;
+	box-sizing: border-box;*/
+}
+
+#nav li:first-child{
+	border-radius: 6px 0 0 6px;/*一番左の角を丸くする*/
+}
+
+#nav li:last-child{
+	border-radius: 0 6px 6px 0;/*一番右の角を丸くする*/
+}
+
+#nav li a{
+	color: #369;/*藍色*/
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 4px;
+	line-height: 44px;/*上下中央揃え。文字の種類で真ん中に見えないときは微調整が必要*/
+	background: #a8eaa5;
+	display: block;/*クリックできる範囲をグループ化＝ヒットエリアを作る*/
+	padding: 0.2em 0.8em;
+}
+
+/*ここまでがボタン化の処理*/
+
+#nav li a:hover{
+	color:#fff;/*文字の白*/
+	background: transparent;
+}
+
+/*ここからが表示中のページの色が変わる処理=カレントページ処理*/
+#Index #nav li:first-child a,
+#New #nav li:nth-child(2) a,
+#Aji #nav li:nth-child(3) a,
+#Saiji #nav li:nth-child(4) a,
+#Access #nav li:nth-child(5) a,
+#Contact #nav li:last-child a{
+	color: #fff;
+	background: transparent;
+}
+
+/* ナビ領域(グローバルナビゲーション) ここまで */
+/* コンテンツブロックここから */
+
+#contents{
+	overflow: hidden; /* （親要素での）フロート解除＋高さの復元。外から中 */
+}
+
+#contents #breadcrumb{
+	padding: 0 8px;
+}
+
+#contents #breadcrumb li{
+	font-size: 0.857em;/* 親要素ulのフォントサイズ1em(14px) X 0.857 ≒ 12px */
+	display: inline;/*リストの行化（リストはブロック要素なので縦に並ぶ）＝リストを横に並ばせる処理＝インライン化する*/
+}
+
+#contents #breadcrumb li:first-child::after{
+/* 疑似要素を使いCSSから要素の内容を追加する(末尾に) */
+	content: ">";
+	padding: 0 0.5em;
+}
+
+#Index #contents #breadcrumb li:first-child:after{
+	content:"";/* リストの最後の末尾には">"を表示しない。上記とセットで使用 */
+}
+
+#contents #breadcrumb li a:hover{
+	text-decoration: underline;
+}
+
+/* コンテンツブロックここまで */
+/* メイン領域 ここから */
+
+#main{
+	float: left;
+	width: 736px;/* 領域幅は736px + 16px + 8px = 760pxになる（設計の段階で計算しておいた数字 */
+	padding: 8px 16px 8px 8px;
+}
+
+#main #lead{
+	padding: 8px 16px;
+	marin-bottom: 16px;
+	border: solid 1px #369;
+	border-radius: 8px;
+}
+
+
+/* メイン領域 ここまで */
+/* サブ領域 ここから */
+
+#sub{
+	float: right;
+	width: 184px;/*設計で計算した数字*/
+	padding: 8px;
+	/*box-sizing: border-box;*/
+}
+
+#sub .banner{
+	margin-bottom: 2em;
+}
+
+#sub .banner:last-child{
+	margin-bottom: 1em;
+}
+
+#sub .banner figcaption{
+	font-size:0.75em;
+}
+
+#sub .banner a{
+	display: block;
+}
+
+#sub .banner a img {
+  border-radius: 4px;
+}
+
+/* サブ領域 ここまで */
+/* フッター領域 ここから */
+
+#footer{
+	color: #ffffff;
+	background: #280023;
+	padding: 16px 32px 4px;
+	/*overflow: hidden;*//*レイアウトが崩れないように念のためなのでなくてもよい*/
+}
+
+#footer .inner{
+	overflow: hidden;
+}
+
+#footer #fnav{
+	float: left;
+}
+
+#footer #fnav ul li::before{
+	content: "●";
+	vertical-align: top;
+	padding-right: 0.5em;
+}
+
+#footer #fnav ul li a{
+	color: #fff;
+	font-size: 0.875em;
+}
+
+#footer #fnav ul li a:hover{
+	color: #ff8e00;
+	text-decoration: underline;
+}
+
+#footer #siteinfo{
+	color: #333;
+	font-size: 0.875em;
+	background: #fff;
+	float: right;
+	width: 400px;
+	padding: 8px;
+	border-radius: 8px;
+}
+
+#footer #copyright{
+	text-align: center;
+	/*clear: both;*/
+	width: 100%;
+	margin-top: 16px;
+	border-top: solid 1p #fff;
+}
+
+
+
+/* フッター領域 ここまで */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

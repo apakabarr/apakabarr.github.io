@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+
+body{
+  background-color:#F5F5DC;
+}
+
+
+#main {
+  background-color: pink;
+}
+
+#sub{
+  background-color: #BFEFDF ;
+}
+
+footer{
+  background-color: #FFFACD;
+}
+
+/*ヘッダーの設定ここから*/
+.headlist{
+  display:flex;
+}
+
+.headlist li:first-child {
+margin-right: auto;
+}
+
+.headlist li{
+  list-style-type: none;
+}
+.headlist a{
+  margin: 10px;
+  border-radius: 5px;
+  background: #60B99A;
+  contentolor: #fff;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.headlist .logo{
+  background:#4584b1;
+}
+
+/*ヘッダーの設定ここまで*/
+/*ナビの設定ここから*/
+.main-nav{
+  display:flex;
+  justify-content: center;
+}
+
+.main-nav li{
+  list-style-type: none;
+}
+
+
+.main-nav a {
+margin: 10px;
+border-radius: 5px;
+background: #60B99A;
+color: #fff;
+display: block;
+padding: 15px;
+text-decoration: none;
+}
+
+/*ナビの設定ここまで*/
+/*パンくずリストの設定ここから*/
+
+#breadcrumb ul{
+  display:flex;
+}
+
+#breadcrumb li{
+  list-style-type: none;
+  padding-left: 8px;
+}
+
+#breadcrumb a{
+  margin: 10px;
+  border-radius: 5px;
+  background: #60B99A;
+  contentolor: #fff;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 40px;
+}
+
+#breadcrumb ul li:first-child{
+  background-image: url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 15px;
+}
+
+/*パンくずリストの設定ここまで*/
+/*メインとサブの切り分けここから*/
+
+#contents{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#main{
+  flex:4;
+}
+
+#sub{
+  flex: auto;
+  
+}
+/*メインとサブの切り分けここまで*/
+/*box1の設定*/
+#box1{
+  background-color: orange;
+  margin-bottom: 20px;
+}
+
+#box1 figure{
+  background-color: red;
+  float:left;
+}
+
+table th, table td {
+  padding: 15px;
+  border: 1px solid #6c5f45;
+}
+
+table {
+  border-collapse: collapse;
+  width:240px;
+  height:96px;
+}
+/*box1の設定ここまで*/
+/*box2の設定ここから*/
+#box2{
+  background-image: url(../images/blog.jpg);
+  background-repeat: no-repeat;
+  height:76px;
+  border:solid 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-position: left;
+  box-shadow: 0 0 0 3px #CCC, 0 0 0 4px #999;
+  background-color: green;
+}
+
+
+/*#side-box li:last-child{
+  background-image: url(../images/blog.jpg);
+  background-repeat: no-repeat;
+  height:76px;
+  border:solid 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-position: left;
+  box-shadow: 0 0 0 3px #CCC, 0 0 0 4px #999;
+}*/
+/*サブのブログここまで*/
+/*メインの設定*/
+#main{
+  margin-left: 20px;
+}
